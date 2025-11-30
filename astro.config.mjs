@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://cades.github.io',
+  site: 'https://cades-center.github.io',
   base: '/entry-points-web',
 });
