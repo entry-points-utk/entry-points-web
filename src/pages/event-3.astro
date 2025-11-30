@@ -4,7 +4,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Event 3: K-12 Efforts">
   <div class="event-header">
-    <span class="event-label">Event 3</span>
     <h1>K-12 Efforts</h1>
     <p class="event-date">April 2026 | Virtual Event</p>
   </div>
@@ -51,6 +50,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
+  :root {
+    --blue-dark: #517C96;
+    --blue-bright: #2197A9;
+    --yellow: #EBEA64;
+    --blue-light: #B9E1E2;
+    --charcoal: #4B4B4B;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+  }
+
   .event-header {
     text-align: center;
     padding: 2rem 0 3rem;
@@ -58,26 +67,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 3rem;
   }
 
-  .event-label {
-    display: inline-block;
-    background: #e74c3c;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
   .event-header h1 {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 2.8rem;
-    color: #2c3e50;
+    color: var(--charcoal);
     margin-bottom: 0.5rem;
+    font-weight: 700;
   }
 
   .event-date {
     font-size: 1.2rem;
-    color: #6c757d;
+    color: var(--blue-dark);
   }
 
   section {
@@ -85,17 +85,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   h2 {
-    color: #2c3e50;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--charcoal);
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    border-bottom: 3px solid #e74c3c;
+    border-bottom: 3px solid var(--yellow);
     padding-bottom: 0.5rem;
+    font-weight: 700;
   }
 
   .overview p {
     font-size: 1.15rem;
     line-height: 1.8;
-    color: #495057;
+    color: var(--charcoal);
   }
 
   .topics ul,
@@ -108,8 +110,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .audience li {
     padding: 1rem 1rem 1rem 2.5rem;
     margin-bottom: 0.75rem;
-    background: #f8f9fa;
-    border-left: 4px solid #e74c3c;
+    background: var(--light-gray);
+    border-left: 4px solid var(--blue-bright);
     position: relative;
   }
 
@@ -118,7 +120,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     content: "→";
     position: absolute;
     left: 1rem;
-    color: #e74c3c;
+    color: var(--blue-bright);
     font-weight: bold;
   }
 
@@ -127,15 +129,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .registration-box {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, rgba(81, 124, 150, 0.15) 0%, rgba(33, 151, 169, 0.15) 100%);
     padding: 3rem;
     border-radius: 12px;
     text-align: center;
+    border-left: 4px solid var(--yellow);
   }
 
   .registration-box h2 {
-    color: white;
+    color: var(--charcoal);
     border: none;
     margin-bottom: 1rem;
   }
@@ -143,23 +145,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .registration-box p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
+    color: var(--charcoal);
   }
 
   .btn-large {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: white;
-    color: #667eea;
+    background: var(--blue-dark);
+    color: var(--white);
     text-decoration: none;
     border-radius: 6px;
     font-weight: 600;
     font-size: 1.1rem;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: background 0.2s;
   }
 
   .btn-large:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    background: var(--blue-bright);
   }
 
   @media (max-width: 768px) {

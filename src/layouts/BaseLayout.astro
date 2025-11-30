@@ -1,5 +1,4 @@
 ---
-// This is the "frontmatter" - JavaScript that runs at build time
 const { title } = Astro.props;
 ---
 
@@ -9,6 +8,9 @@ const { title } = Astro.props;
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title} | Entry Points</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -16,7 +18,7 @@ const { title } = Astro.props;
       <div class="nav-container">
         <div class="logo">
           <h1>Entry Points</h1>
-          <p class="tagline">Pathways and Possibilities to Support Student Learning about Data and AI</p>
+          <p class="tagline">CADES Webinar Series</p>
         </div>
         <ul class="nav-links">
           <li><a href="/">Home</a></li>
@@ -29,16 +31,39 @@ const { title } = Astro.props;
   </header>
 
   <main>
-    <slot />  <!-- This is where page content goes -->
+    <slot />
   </main>
 
   <footer>
-    <p>&copy; 2026 University of Tennessee, Knoxville. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Entry Points</h3>
+        <p>Pathways and Possibilities to Support Student Learning about Data and AI</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>University of Tennessee, Knoxville<br>
+        College of Education, Health, and Human Sciences<br>
+        cades@utk.edu</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 University of Tennessee, Knoxville. All rights reserved.</p>
+    </div>
   </footer>
 </body>
 
 <style>
-  /* Basic styling - you'll customize this later */
+  :root {
+    --blue-dark: #517C96;
+    --blue-bright: #2197A9;
+    --yellow: #EBEA64;
+    --blue-light: #B9E1E2;
+    --charcoal: #4B4B4B;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -46,16 +71,20 @@ const { title } = Astro.props;
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--charcoal);
+    background: var(--white);
   }
 
   header {
-    background: #2c3e50;
-    color: white;
-    padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: var(--blue-dark);
+    color: var(--white);
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 8px rgba(81, 124, 150, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
 
   .nav-container {
@@ -68,45 +97,117 @@ const { title } = Astro.props;
   }
 
   .logo h1 {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.8rem;
+    font-weight: 700;
     margin-bottom: 0.25rem;
+    letter-spacing: -0.5px;
   }
 
   .tagline {
-    font-size: 0.9rem;
-    opacity: 0.9;
+    font-size: 0.85rem;
+    opacity: 0.95;
+    font-weight: 400;
+    letter-spacing: 0.3px;
   }
 
   .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     list-style: none;
   }
 
   .nav-links a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.95rem;
     transition: opacity 0.2s;
+    position: relative;
   }
 
   .nav-links a:hover {
     opacity: 0.8;
   }
 
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--yellow);
+    transition: width 0.3s;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
   main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 2rem;
-    min-height: calc(100vh - 200px);
+    padding: 4rem 2rem;
+    min-height: calc(100vh - 300px);
   }
 
   footer {
-    background: #f8f9fa;
+    background: var(--charcoal);
+    color: var(--white);
+    margin-top: 6rem;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+  }
+
+  .footer-section h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--yellow);
+  }
+
+  .footer-section p {
+    line-height: 1.8;
+    opacity: 0.9;
+    font-size: 0.95rem;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 2rem;
     text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
-    border-top: 1px solid #dee2e6;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    .nav-container {
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    main {
+      padding: 2rem 1.5rem;
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
   }
 </style>
 </html>
