@@ -31,8 +31,9 @@ Highlighting opportunities to support data science and AI education in classroom
 For questions about the Entry Points series, please contact:
 
 **University of Tennessee, Knoxville**  
-College of Education, Health, and Human Sciences  
-cades@utk.edu
+College of Education, Health, and Human Sciences
+Computing, AI, and Education 
+cade@utk.edu
 
 ## Acknowledgments
 This series is part of CEHHS's ongoing commitment to advancing data science and AI education and building pathways for learners at all levels.
