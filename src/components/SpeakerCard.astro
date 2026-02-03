@@ -1,0 +1,111 @@
+---
+const { name, university, title, image, bio } = Astro.props;
+---
+
+<div class="speaker-card">
+  <div class="speaker-header">
+    <div class="speaker-image">
+      <img src={image} alt={`${name} headshot`} />
+    </div>
+    <div class="speaker-info">
+      <h3 class="speaker-name">{name}</h3>
+      <p class="speaker-university">{university}</p>
+      <p class="speaker-title">{title}</p>
+    </div>
+  </div>
+  <div class="speaker-bio">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .speaker-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .speaker-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .speaker-header {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .speaker-image {
+    flex-shrink: 0;
+  }
+
+  .speaker-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2197A9;
+  }
+
+  .speaker-info {
+    flex-grow: 1;
+  }
+
+  .speaker-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .speaker-university {
+    font-size: 1.1rem;
+    color: #2197A9;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+  }
+
+  .speaker-title {
+    font-size: 1rem;
+    color: #666;
+    font-style: italic;
+    margin: 0;
+  }
+
+  .speaker-bio {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #495057;
+  }
+
+  .speaker-bio :global(p) {
+    margin-bottom: 1rem;
+  }
+
+  .speaker-bio :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .speaker-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .speaker-image img {
+      width: 120px;
+      height: 120px;
+    }
+
+    .speaker-name {
+      font-size: 1.3rem;
+    }
+  }
+</style>
