@@ -164,7 +164,29 @@ import SpeakerCard from '../components/SpeakerCard.astro';
     </ul>
   </section>
 
-  <section class="registration">
+  <section class="event-flyer">
+  <h2>Event Flyer</h2>
+  
+  <div class="flyer-container">
+    <iframe 
+      src="/ep-event-1-flyer.pdf" 
+      title="Event 1 Flyer"
+      width="100%"
+      height="600px"
+    ></iframe>
+    <p style="text-align: center; margin-top: 1rem;">
+      <small>Can't see the preview? <a href="/ep-event-1-flyer.pdf" target="_blank">Open PDF</a></small>
+    </p>
+  </div>
+  
+  <div class="download-section">
+    <a href="/ep-event-1-flyer.pdf" download class="download-btn">
+      Download Flyer (PDF)
+    </a>
+  </div>
+</section>
+
+<section class="registration">
     <div class="registration-box">
       <h2>Register for Event 1</h2>
       <p>Registration will open soon. Join our mailing list to be notified when registration is available.</p>
@@ -297,5 +319,40 @@ import SpeakerCard from '../components/SpeakerCard.astro';
     .registration-box {
       padding: 2rem 1.5rem;
     }
+  }
+
+  .event-flyer {
+    margin: 3rem 0;
+  }
+
+  .flyer-container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+
+  .flyer-container iframe {
+    border: none;
+    display: block;
+  }
+
+  .download-section {
+    text-align: center;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #2197A9;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+
+  .download-btn:hover {
+    background: #1a7a89;
   }
 </style>
