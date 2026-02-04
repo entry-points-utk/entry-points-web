@@ -18,14 +18,72 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </p>
   </section>
 
-  <section class="topics">
-    <h2>Speakers</h2>
-    <ul>
-      <li>Unknown</li>
-      <li>Unknown</li>
-      <li>Unknown</li>
-      <li>Unknown</li>
-    </ul>
+  <section class="speakers">
+    <h2>Featured Speakers</h2>
+    
+    <SpeakerCard 
+      name="Mahmoud Harding"
+      university="Data Science 4 Everyone (DS4E)"
+      title="Instructional Design Director"
+      image="/speakers/mahmoud_harding.png"
+    >
+      <p>
+        Mahmoud Harding is the Instructional Design Director at Data Science 4 Everyone (DS4E), a 
+        national initiative based at the University of Chicago. He previously co-developed the data
+        science program at the North Carolina School of Science and Mathematics (NCSSM) and has taught
+        introductory data science at the North Carolina State University Data Science and AI Academy (DSA).
+      </p>
+    </SpeakerCard>
+
+    <SpeakerCard 
+      name="Dr. Lynn Hodge"
+      university="University of Tennessee, Knoxville"
+      title="Professor and Head, Department of Theory & Practice in Teacher Education"
+      image="/speakers/lynn_hodge.png"
+    >
+      <p>
+        Lynn Hodge is department head and professor of STEM (mathematics) education in the Department of Theory
+        and Practice in Teacher Education at the University of Tennessee, Knoxville. She is also the Director
+        of the Center for Enhancing Education in Mathematics and Sciences (CEEMS).
+      </p>
+
+      <p>
+        A frequent recipient of external funding focusing on STEM topics and teaching, Hodge provides guidance for
+        STEM teachers and students locally, and at state and national levels.
+      </p>
+    </SpeakerCard>
+
+    <SpeakerCard 
+      name="Dr. Rachel Wong"
+      university="University of Tennessee, Knoxville"
+      title="Assistant Professor, Department of Theory & Practice in Teacher Education"
+      image="/speakers/rachel_wong.png"
+    >
+      <p>
+        Rachel Wong is an assistant professor in information technology education in the Department of Theory and
+        Practice in Teacher Education at the University of Tennessee, Knoxville and is coordinator of the instructional
+        technology education program.
+      </p>
+
+      <SpeakerCard 
+      name="Dr. Kelly Boles"
+      university="University of Tennessee, Knoxville"
+      title="Assistant Professor, Department of Theory & Practice in Teacher Education"
+      image="/speakers/kelly_boles.png"
+    >
+      <p>
+        Kelly L. Boles is an assistant professor of educational data science in the Department of Theory and Practice
+        in Teacher Education at the University of Tennessee, Knoxville.
+      </p>
+
+      <p>
+        Kelly L. Boles is an assistant professor of educational data science in the Department of Theory and Practice
+        in Teacher Education at the University of Tennessee, Knoxville. Motivated by her K-12 mathematics, computer
+        science, and engineering teaching career in rural Central Appalachia, her work attends to geographic differences
+        in students' and teachers’ learning opportunities, particularly within STEM.
+      </p>
+
+    </SpeakerCard>
   </section>
 
   <section class="audience">
