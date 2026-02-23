@@ -13,7 +13,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h2>Overview</h2>
     <p>
       Join us for the third event in our webinar series exploring pathways to support student learning about data and AI. This session focuses on national frameworks & recommendations that are shaping data science and AI education from K-12 through college.
+    </p>
+    <p>
       Three major national initiatives are providing crucial guidance for educators: the National Academies' Competencies for the Future of Data and Computing, the K-12 Data Science Learning Progressions developed by 14 national education associations, and the American Statistical Association's 2025 GAISE College Report Revision—now covering both statistics and data science for the first time.
+    </p>
+    <p>
       Hear directly from the leaders behind these frameworks about how the frameworks can support effective and robust teaching and learning in data science and AI.
     </p>
   </section>
@@ -189,5 +193,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .registration-box {
       padding: 2rem 1.5rem;
     }
+  }
+  .event-flyer {
+    margin: 3rem 0;
+  }
+
+  .flyer-container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+
+  .flyer-container iframe {
+    border: none;
+    display: block;
+  }
+
+  .download-section {
+    text-align: center;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #2197A9;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+
+  .download-btn:hover {
+    background: #1a7a89;
   }
 </style>
