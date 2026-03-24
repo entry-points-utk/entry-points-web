@@ -155,12 +155,12 @@ import SpeakerCard from '../components/SpeakerCard.astro';
   <h2>Event Slides</h2>
 
   <div class="flyer-container">
-    <iframe
-      src="/ep-event-1-slides.pdf"
-      title="Event 1 Slides"
+    <object
+      data="/ep-event-1-slides.pdf"
+      type="application/pdf"
       width="100%"
       height="600px"
-    ></iframe>
+    ></object>
     <p style="text-align: center; margin-top: 1rem;">
       <small>Can't see the preview? <a href="/ep-event-1-slides.pdf" target="_blank">Open PDF</a></small>
     </p>
@@ -321,7 +321,7 @@ import SpeakerCard from '../components/SpeakerCard.astro';
     margin-bottom: 1.5rem;
   }
 
-  .flyer-container iframe {
+  .flyer-container object {
     border: none;
     display: block;
   }
