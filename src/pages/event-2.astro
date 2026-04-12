@@ -247,6 +247,23 @@ import SpeakerCard from '../components/SpeakerCard.astro';
     color: var(--white);
   }
 
+  .event-flyer {
+    margin: 3rem 0;
+  }
+
+  .flyer-container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .flyer-container object {
+    border: none;
+    display: block;
+  }
+
   @media (max-width: 768px) {
     .event-header h1 {
       font-size: 2rem;
