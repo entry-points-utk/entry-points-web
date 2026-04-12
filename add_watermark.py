@@ -3,7 +3,7 @@ from pypdf import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 from reportlab.lib.colors import Color
 
-INPUT  = "public/ep-event-2-slides.pdf"
+INPUT  = "/tmp/ep-event-2-slides-original.pdf"
 OUTPUT = "public/ep-event-2-slides.pdf"
 PASSWORD = "entrypoints2026"
 WATERMARK_TEXT = "DO NOT REPRODUCE"
@@ -13,7 +13,7 @@ def make_watermark(width, height):
     c = canvas.Canvas(packet, pagesize=(width, height))
     gray = Color(0.5, 0.5, 0.5, alpha=0.3)
     c.setFillColor(gray)
-    c.setFont("Helvetica-Bold", 60)
+    c.setFont("Helvetica-Bold", 45)
     c.translate(width / 2, height / 2)
     c.rotate(45)
     c.drawCentredString(0, 0, WATERMARK_TEXT)
@@ -22,6 +22,8 @@ def make_watermark(width, height):
     return PdfReader(packet).pages[0]
 
 reader = PdfReader(INPUT)
+if reader.is_encrypted:
+    reader.decrypt(PASSWORD)
 writer = PdfWriter()
 
 for page in reader.pages:
@@ -31,7 +33,7 @@ for page in reader.pages:
     page.merge_page(watermark)
     writer.add_page(page)
 
-writer.encrypt(user_password=PASSWORD, owner_password=PASSWORD)
+writer.encrypt(user_password="", owner_password=PASSWORD)
 
 with open(OUTPUT, "wb") as f:
     writer.write(f)
